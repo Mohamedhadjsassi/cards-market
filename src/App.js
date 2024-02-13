@@ -1,24 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Article from './Article';
+import MyList from './ListdesProduits';
+import Join from './Join';
 function App() {
+  console.log(MyList,"list");
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+  <Join/>
+ {MyList.map((item,i) =>  <Article  title={item.title} image={item.image} disc={item.description} prix={item.price}/>)} 
+
+  </>
   );
 }
 
